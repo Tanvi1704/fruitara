@@ -14,7 +14,7 @@ function MyOrder() {
     const getMyOrder = async () => {
         try {
           const res = await axios.post(
-            `http://localhost:8000/api/v1/order/getorder`,
+            `http://fruitara.vercel.app/api/v1/order/getorder`,
             {
               userId: user?.user._id,
               token : localStorage.getItem("token")
