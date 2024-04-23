@@ -9,7 +9,7 @@ const FoodPage = () => {
     const [foodDetails,setFoodDetails]=useState([])
     const getFoodDetails=async()=>{
         try{
-            const res = await axios.get(`http://fruitara.vercel.app/api/v1/food/getFood/${params.id}`)
+            const res = await axios.get(`https://fruitara.vercel.app/api/v1/food/getFood/${params.id}`)
             if(res.data.success){
                 setFoodDetails(res.data.data.food)
             }
