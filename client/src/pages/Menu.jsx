@@ -53,7 +53,7 @@ const Menu = () => {
   const getFoods = async () => {
     try {
       const res = await axios.get(
-        `http://fruitara.vercel.app/api/v1/food/getAllFoods?catagory=${value}`
+        `https://fruitara.vercel.app/api/v1/food/getAllFoods?catagory=${value}`
       );
       if (res.data.success) {
         setFood(res.data.data.food);
