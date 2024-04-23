@@ -10,7 +10,7 @@ function AllOrder() {
 
   const getAllOrders = async () => {
     try{
-      const res = await axios.post("http://localhost:8000/api/v1/order/getorders", {
+      const res = await axios.post("http://fruitara.vercel.app/api/v1/order/getorders", {
         userId : user?.user._id,
         token : localStorage.getItem("token")
       }, {
@@ -85,7 +85,7 @@ const OrderFoods = ({order}) => {
   const {user, setUser} = useUserContext();
   const handleDelivered = async (id) => {
     try{
-      const res = await axios.post("http://localhost:8000/api/v1/order/delivered", {
+      const res = await axios.post("http://fruitara.vercel.app/api/v1/order/delivered", {
         userId : user?.user._id,
         orderId:id,
         token : localStorage.getItem("token")
