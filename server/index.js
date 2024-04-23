@@ -14,7 +14,7 @@ const port = process.env.PORT || 8000;
 // Configure CORS to allow requests from the frontend domain
 app.use(cors({
   origin: `https://fruitara-frontend.vercel.app`,
-  methods: ["GET", "POST"],
+  methods: ["GET", "POST" , "PUT"],
   credentials: true,
 }));
 
