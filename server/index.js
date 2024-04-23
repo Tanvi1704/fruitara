@@ -11,7 +11,7 @@ dotenv.config();
 const cors = require("cors");
 const port = process.env.PORT || 8000;
 app.use(cors({
-  origin: [`https://fruitara-frontend.vercel.app/login`],
+  origin: [`https://fruitara-frontend.vercel.app`],
   methods:  ["GET", "POST"],
   credentials : true,
 }));
