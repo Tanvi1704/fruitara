@@ -10,7 +10,7 @@ function Special() {
   const getFoods = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8000/api/v1/food/specialFoods`
+        `http://fruitara.vercel.app/api/v1/food/specialFoods`
       );
       if (res.data.success) {
         setSpecialFood(res.data.data.food);
