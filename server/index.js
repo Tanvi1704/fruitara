@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 // Connect to the database
 const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb+srv://jainreet112:reetjain@fruit-deliver-webapp.ox29wqk.mongodb.net/?retryWrites=true&w=majority&appName=fruit-deliver-webapp");
+    await mongoose.connect(process.env.MONGODB);
     console.log("DB is Connected!");
   } catch (error) {
     console.error("Failed to connect to MongoDB:", error);
