@@ -14,7 +14,7 @@ function Register() {
     setUploading(true);
     try {
       const { data } = await axios.post(
-        "http://fruitara.vercel.app/api/v1/all/upload-image/",
+        "https://fruitara.vercel.app/api/v1/all/upload-image/",
         formData
       );
       setUploading(false);
@@ -38,7 +38,7 @@ function Register() {
     const profileImage = image?.url;
     const userData = { name,email, password, passwordConfirm, profileImage };
 
-    await fetch("http://fruitara.vercel.app/api/v1/user/register", {
+    await fetch("https://fruitara.vercel.app/api/v1/user/register", {
       method: "POST",
       headers: {
         "content-type": "application/json",
