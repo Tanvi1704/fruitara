@@ -9,7 +9,7 @@ export default function ProtectedRoute({ children }) {
   const getUser = async () => {
     try {
       const res = await axios.post(
-        "http://fruitara.vercel.app/api/v1/user/get-user",
+        "https://fruitara.vercel.app/api/v1/user/get-user",
         {
           token: localStorage.getItem("token"),
         },
