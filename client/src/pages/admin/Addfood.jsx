@@ -16,7 +16,7 @@ function Addfood() {
     setUploading(true);
     try {
       const { data } = await axios.post(
-        "http://fruitara.vercel.app/api/v1/all/upload-image/",
+        "https://fruitara.vercel.app/api/v1/all/upload-image/",
         formData
       );
       setUploading(false);
@@ -45,7 +45,7 @@ function Addfood() {
     // const foodData = { name, price, foodImage, catagory, weight, location, description};
 
     const res = await axios.post(
-      "http://fruitara.vercel.app/api/v1/food/addfood",
+      "https://fruitara.vercel.app/api/v1/food/addfood",
       { name, price, foodImage, catagory, weight, location, description },
       {
         headers: {
