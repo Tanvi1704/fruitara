@@ -17,7 +17,7 @@ function Profile() {
     setUploading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/api/v1/all/upload-image/",
+        "http://fruitara.vercel.app/api/v1/all/upload-image/",
         formData
       );
       setUploading(false);
@@ -44,7 +44,7 @@ function Profile() {
     
     try {
         const res = await axios.put(
-          "http://localhost:8000/api/v1/user/update",
+          "http://fruitara.vercel.app/api/v1/user/update",
           {
             userId : user.user._id,
             name,
