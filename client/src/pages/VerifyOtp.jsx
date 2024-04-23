@@ -24,7 +24,7 @@ function VerifyOtp() {
     const isVerified = user?.user?.isVerified;
     const dataOtp = { email, isVerified, combineOtp };
 
-    await fetch("http://fruitara.vercel.app/api/v1/user/verifyotp", {
+    await fetch("https://fruitara.vercel.app/api/v1/user/verifyotp", {
       method: "POST",
       headers: {
         "content-type": "application/json",
