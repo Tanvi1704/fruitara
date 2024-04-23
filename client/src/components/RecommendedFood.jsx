@@ -10,7 +10,7 @@ function RecommendedFood() {
   const getFoods = async () => {
     try {
       const res = await axios.get(
-        `http://fruitara.vercel.app/api/v1/food/getTopRated`
+        `https://fruitara.vercel.app/api/v1/food/getTopRated`
       );
       if (res.data.success) {
         setRatedFood(res.data.data.food);
