@@ -26,7 +26,7 @@ function Order() {
         qty: item.qty,
       }));
       const res = await axios.post(
-        `http://fruitara.vercel.app/api/v1/order/order`,
+        `https://fruitara.vercel.app/api/v1/order/order`,
         {
           user: user?.user._id,
           items: orderItems,
