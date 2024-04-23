@@ -15,7 +15,7 @@ function Login() {
 
     const userData = { email, password };
 
-    await fetch("http://fruitara.vercel.app/api/v1/user/login", {
+    await fetch("https://fruitara.vercel.app/api/v1/user/login", {
       method: "POST",
       headers: {
         "content-type": "application/json",
