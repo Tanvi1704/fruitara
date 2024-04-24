@@ -11,7 +11,7 @@ const orderRoute = require("./routes/order");
 dotenv.config();
 
 const app = express();
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 // Enable CORS for requests from the frontend domain
 app.use(cors({
@@ -56,6 +56,14 @@ app.use("/api/v1/all", imageRoute);
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/food", foodRoute);
 app.use("/api/v1/order", orderRoute);
+
+// Add middleware to include CORS headers
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://fruitara-frontend.vercel.app");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  next();
+});
 
 // Start the server after connecting to the database
 connectDB().then(() => {
