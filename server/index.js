@@ -1,35 +1,37 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const imageRoute = require("./routes/image");
 const userRoute = require("./routes/user");
 const foodRoute = require("./routes/food");
 const orderRoute = require("./routes/order");
 
-const app = express();
+// Load environment variables from .env file
 dotenv.config();
-const cors = require("cors");
+
+const app = express();
 const port = process.env.PORT || 8000;
 
-// Configure CORS to allow requests from the frontend domain
+// Enable CORS for requests from the frontend domain
 app.use(cors({
-  origin: `https://fruitara-frontend.vercel.app`,
+  origin: "https://fruitara-frontend.vercel.app",
   methods: ["GET", "POST", "PUT"],
   credentials: true,
 }));
 
 // Parse JSON bodies
-app.use(express.json({ extended: true, limit: "3mb" }));
+app.use(express.json({ limit: "3mb" }));
 
-// Handle root route
+// Root route
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-// Connect to the database
+// Connect to MongoDB database
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB, {
+    await mongoose.connect("mongodb+srv://jainreet112:reetjain@fruit-deliver-webapp.ox29wqk.mongodb.net/?retryWrites=true&w=majority&appName=fruit-deliver-webapp", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
