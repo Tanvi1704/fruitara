@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 const protect = async (req, res, next) => {
     try {
         const token = req.headers["authorization"].split(" ")[1];
-        jwt.verify(token, process.env.JWT_SECRET, (err, decode) => {
+        jwt.verify(token, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9", (err, decode) => {
             if(err) {
                 return res.status(200).send({
                     message:"Auth failed",
