@@ -14,7 +14,7 @@ const port = process.env.PORT || 8000;
 // Configure CORS to allow requests from the frontend domain
 app.use(cors({
   origin: `https://fruitara-frontend.vercel.app`,
-  methods: ["GET", "POST" , "PUT"],
+  methods: ["GET", "POST", "PUT"],
   credentials: true,
 }));
 
@@ -29,7 +29,10 @@ app.get("/", (req, res) => {
 // Connect to the database
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB);
+    await mongoose.connect(process.env.MONGODB, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
     console.log("DB is Connected!");
   } catch (error) {
     console.error("Failed to connect to MongoDB:", error);
@@ -52,8 +55,9 @@ app.use("/api/v1/user", userRoute);
 app.use("/api/v1/food", foodRoute);
 app.use("/api/v1/order", orderRoute);
 
-// Start the server
-app.listen(port, () => {
-  connectDB();
-  console.log("Server is running on port " + port);
+// Start the server after connecting to the database
+connectDB().then(() => {
+  app.listen(port, () => {
+    console.log("Server is running on port " + port);
+  });
 });
