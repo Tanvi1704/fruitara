@@ -31,10 +31,7 @@ app.get("/", (req, res) => {
 // Connect to MongoDB database
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(process.env.MONGODB);
     console.log("DB is Connected!");
   } catch (error) {
     console.error("Failed to connect to MongoDB:", error);
