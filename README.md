@@ -111,5 +111,6 @@ For any inquiries or assistance, please contact our support team at tanviagrawal
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+
  
 ### Thank you for choosing Fruitara! We hope you enjoy your fruity journey with us. Happy ordering! 
