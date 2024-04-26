@@ -108,10 +108,7 @@ We welcome contributions from the open-source community to help improve Fruitara
 ## Support
 For any inquiries or assistance, please contact our support team at tanviagrawal1704@gmail.com & jainreet112@gmail.com,  We're here to help!
 
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 
 #
  
-Thank you for choosing Fruitara! We hope you enjoy your fruity journey with us. Happy ordering! 
+<b>Thank you for choosing Fruitara! We hope you enjoy your fruity journey with us. Happy ordering! </b>
